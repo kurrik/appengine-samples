@@ -3,6 +3,8 @@ INTRO:
 This is a sample App Engine implementation of a contact list entry form.  It 
 should be a suitable base for building a rich AJAX client.
 
+This repository is available at http://bit.ly/sencha-appengine-sample  
+
 ABOUT:
 ------
 There are 3 main URLs:
