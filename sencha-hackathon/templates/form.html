@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Input</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    {% if error %}
+      <div class="error">{{error}}</div>
+    {% endif %}
+    <h1>Input a new contact</h1>
+    <p><a href="/">Click here</a> to see all contacts.</p>
+    
+    <form method="POST" action="/form">
+      <label target="eventid">Event ID:</label> <input type="text" name="eventid" value="{{eventid}}" /><br>
+      <label target="username">Username:</label> <input type="text" name="username" value="{{username}}" /><br>
+      <label target="twitterid">Twitter ID:</label> <input type="text" name="twitterid" value="{{twitterid}}"/><br>
+      <label target="email">Email:</label> <input type="text" name="email" value="{{email}}"/>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

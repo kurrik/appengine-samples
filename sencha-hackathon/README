@@ -1,0 +1,34 @@
+INTRO:
+------
+This is a sample App Engine implementation of a contact list entry form.  It 
+should be a suitable base for building a rich AJAX client.
+
+ABOUT:
+------
+There are 3 main URLs:
+  /       - Basic list of data in the data store.
+  /form   - An input form for getting data into the app.
+  /json   - A JSON representation of the data served at /
+  
+TO MODIFY:
+----------
+Put static files in /static and refer to them as /static/myfile.ext
+
+Edit the form and index templates at /templates/form.html and 
+/templates/index.html
+
+There is also a JSON feed your JavaScript may reference at /json
+
+TO RUN LOCALLY:
+---------------
+Obtain the AppEngine SDK from http://code.google.com/appengine/downloads.html
+Install Python if you don't have it
+Run:
+  dev_appserver.py --port=9999 --address=0.0.0.0 .
+
+From this base directory (note the trailing period).
+ 
+TO DEPLOY:
+----------
+Change the app name in app.yaml before deploying.  You can register an 
+application name at www.appspot.com.

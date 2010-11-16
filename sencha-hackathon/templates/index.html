@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact List</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <h1>List of Contacts</h1>
+    <p>
+      <a href="/form">Click here</a> to input.
+    </p>
+    {% for contact in contacts %}
+      <p>
+        {{contact.eventid}}<br>
+        {{contact.username}}<br>
+        {{contact.twitterid}}<br>
+        {{contact.email}}<br>
+      </p>
+    {% endfor %}
+  </body>
+</html>
