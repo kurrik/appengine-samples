@@ -7,12 +7,6 @@ import (
   "time"
 )
 
-type PostData struct {
-  Content string // post content
-  Seconds int64  // timestamp
-  Host string    // hostname
-}
-
 func init() {
   http.HandleFunc("/dest", posthandler)
   http.HandleFunc("/", formhandler)
@@ -31,10 +25,10 @@ func formhandler (w http.ResponseWriter, r *http.Request) {
 }
 
 func posthandler (w http.ResponseWriter, r *http.Request) {
-  data := PostData {
-    Content: r.FormValue("content"),
-    Seconds: time.Seconds(),
-    Host: r.Host,
+  data := map[string] interface{} {
+    "Content":  r.FormValue("content"),
+    "Seconds": time.Seconds(),
+    "Host": r.Host,
   }
   
   if err := postTemplate.Execute(w, data); err != nil {
