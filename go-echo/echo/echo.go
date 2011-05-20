@@ -2,6 +2,7 @@ package echo
 
 import (
   "http"
+  "fmt"
   "template"
   "time"
 )
@@ -18,14 +19,7 @@ func init() {
 }
 
 func formhandler (w http.ResponseWriter, r *http.Request) {
-  if err := formTemplate.Execute(w, nil); err != nil {
-    http.Error(w, err.String(), http.StatusInternalServerError)
-  }
-}
-
-var formTemplate = template.MustParse(formTemplateHTML, nil)
-const formTemplateHTML = `
-<!DOCTYPE html>
+  fmt.Fprint(w, `<!DOCTYPE html>
 <html>
   <body>
     <form method="POST" action="/dest">
@@ -33,7 +27,8 @@ const formTemplateHTML = `
       <button>Submit</button>
     </form>
   </body>
-</html>`
+</html>`)
+}
 
 func posthandler (w http.ResponseWriter, r *http.Request) {
   data := PostData {
